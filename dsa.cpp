@@ -4,8 +4,8 @@ using namespace std;
 
 // Priority Queue
 void pqDemo(){
-    priority_queue<int, vector<int>, greater<int>> pq;
-    pq.push(3); pq.push(1); pq.push(2);
+    priority_queue<int, vector<int>, greater<int>> pq;//min heap greater<int> if we didnt use it by default it will be max heap
+    pq.push(3); pq.push(1); pq.push(2);// it means inserting 3,1,2 in queue
     while(!pq.empty()){
         cout << pq.top() << " ";
         pq.pop();
@@ -14,7 +14,6 @@ void pqDemo(){
 
 // Graph + Cycle + Topo
 unordered_map<int, vector<int>> g;
-
 bool dfsCycle(int v, unordered_set<int>&vis, unordered_set<int>&rec){
     if(rec.count(v)) return true;
     if(vis.count(v)) return false;
